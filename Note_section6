@@ -1,0 +1,155 @@
+				Structuring our code with modules
+
+Modules:
+- Important aspect of any robust application's architecture.
+- Keep the units of code for a project both cleanly separated and organized.
+- Encapsulate some data into privacy and expose other data publicly.
+
+				To-Do List
+
+1. Add event handler
+2. Get input values
+3. Add the new item to our data structure
+4. Add the new item to the UI
+5. Calculate budget
+6. Update the UI
+
+
+				We gonna have 3 main modules : UI module & Data module & Controller module
+
+UI module:  Take value from and set value to the UI
+- Get input values
+- Add the new item to the UI
+- Update the UI
+
+Data module
+- Add the new item to our data structure
+- Calculate budget
+
+Controller module
+- - Add event handler
+
+
+
+				All MEDTHODS I have learned from this app
+
+- splice() => delete elements from the array (budgetController -> deleteItem)
+- map() => loop through an array an return a new array -> (budgetController -> deleteItem)
+- parseInt() => covert string to number (ctrlDeleteItem -> ctrlDeleteItem)
+- split() => It's a String medthod, used for spliting strings from symbol letters ex. string.split("-") -> it will takes all the strings that has been 
+			splited by '-' (controller -> ctrlDeleteItem)
+- removeChild() => remove child element in DOM (UIController -> deleteListItem)
+*************** How to create prototype method, Math.round() (budgetController -> Expense) ******************
+************ How to pass a callback() with parameters in a function, and how to call a function with a function as an argument(UIController -> displayPercentages) and (UIController -> changedType) ***********
+********* How to call private methods(methods that are declared in a module, not in a returned object) (UIController -> addListItem()) *******
+- Math.abs() , tiFixed() , split(), substr() (UIController  -> formatNumber())
+- Get Date, month, year (UICOntroller -> displayMonth)
+- How to use toggle() (UIController -> changedType) 
+
+
+
+	
+				What you will learn in this section	
+
+- how to use module patterns
+- More about private and public data, encapsulation en separation of concerns
+	Lecture 79
+- How to set up event listeners for keypress events.  (In controller => setupEventListeners())
+- How to use event object  (In controller => setupEventListeners())
+	Lecture 81
+- How to choose function contructors that meet our application's needs  (in budgetController => var Expense, var Income)
+- How to set up a proper data structure for our budget controller
+	Lecture 82
+- How to avoid conflicts in our data structures.
+- How and why to pass data from one module to another.
+	Lecture 83
+- A technique for adding big chunks of HTML into the DOM	(UIController => addListItem)
+- How to replace parts of Strings	(UIController => addListItem)
+- How to do DOM manipulation using the 'insertAdjacentHTML' methods     (UIController => addListItem)
+	Lecture 84
+- How to clear HTML fields
+- How to use querySelectorAll	(UIController => clearFields())
+- How to convert a list to an array  (UIController => clearFields())
+- A better way to loop over an array then for loops: foreach.	(UIController => clearFields())
+	Lecture 85
+- How to convert field input to numbers.  (UIController => getInput())
+- How to prevent false inputs	(controller => ctrlAddItem())
+	Lecture 86
+- How and why to create simple, reusable functions with only one purpose.
+- How to sum all elements of an arrayesing the forEach method.
+	Lecture 87
+- See the MAP STRUCTURE of the app
+- Practice DOM mulnipulation by updating the budget and total values.
+	Lecture 88
+- See the MAP STRUCTURE of the app
+	Lecture 89
+- About Event Bubbling, Target Element, Event Delegation  
+	Event Bubbling => when event is fired or triggered on some DOM element ex. by clicking "link" button , then the exact same event is also triggered on 
+					all of the parent element.
+
+	Target Element => the "link" button in this case , the target element is stored as a property in the event object, this means that all the parents 
+					elements on which the element will also fire will know the target element of the event, so where the event was first fired, and that brings as to event delegation.
+
+	Event Delegation => if the event bubbles up in the DOM tree, and if we know where the event was fired, then we can simply attach and event handler to 
+						a parent element and wait for the event to bubble up, and then we can then do whatever we intended to do with our target element. This technique called "Event Delegation"
+					=> Event Delegation is to not set up the event handler on the original element that we are interested in, but to attach it to a 
+					 	parent element and catch the event there because it bubbles up. And we can then act on the element that we're interested in using the target element property.
+
+	Use cases for EVENT DELEGATION
+	1.  When we have an element with lots of child elements that we are interested in. In this case, instead of adding an event handler to all of these child elements, we simply add it to the parent element and then determine on which child element the event was fired
+	2. When we want an event handler attached to an element that is not yet in the DOM when our page is loaded.
+	IN THE CASE OF THIS APP => We have a lot of expenses and income items that are not in the DOM when we load the page, so there is no way to attach an event handler to them and also there are would be a lot of them, so it wouldn't be useful to have one event handler attached to each of them
+
+	Lecture 90 (Example in controller -> setupEventListener)
+- How to use event delegation in practice.
+- How to use IDs in HTML to connect the UI with the data model.
+- How to use the parentNode property for DOM traversing การข้ามผ่าน.
+- How to use String.split()
+	Lecture 91 (Example in budgetController -> deleteItem)
+- Another medthod to loop over an array: map
+- How to remove elements from an array using the splice medthod.
+	Lecture 92
+- More DOM manipulation: How to remove an element from the DOM
+	Lecture 95
+- How to make our budgetController interact with the expense prototype.
+
+
+
+
+
+
+					Why we gonna use modules for a project?
+
+- We want to keep pieces of code that are related to one another together inside of separate, independent and organized units.
+  And in each if these modules, we'll have variables and functions that are private;
+
+  Private variables, mehtod => They are only accessible inside of the module. We want it so that no other code can override our data. 
+  								Our code or data are going to be safe.
+  Public methods => We expose them to the public so that other functions or modules can access and use them. 
+
+  So this is called data encapsulation;
+
+  Data encasulation => Data encasulation allows us to hide implementation details of a specific module from the outside scope so that we only expose a 						  public interface which is sometimes called 'API'
+
+
+  We use the module patterns to create modules in JS
+
+
+
+  ***** The secret of module pattern *****
+  - It returns an object containing all of the functions that we want to be public. So the functions that we want to give the outside scope access to.
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
